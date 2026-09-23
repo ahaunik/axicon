@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-primary rounded-md" aria-label="AXICON Ltd - Home">
-              <Image src="/logo.png" alt="AXICON Ltd" className="h-20 w-auto" width="120" height="60" />
+              <img src="/axicon/logo.png" alt="AXICON Ltd" className="h-20 w-auto" width="120" height="60" />
             </Link>
             <p className="mt-6 text-sm text-brand-accent-muted leading-relaxed">
               AXICON Ltd provides technical inspection and engineering consultancy services across Singapore and Southeast Asia. Committed to quality, safety, and engineering excellence.
