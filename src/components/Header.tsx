@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -48,12 +49,13 @@ export default function Header() {
             className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 rounded-md"
             aria-label="AXICON Ltd - Home"
           >
-            <img
+            <Image
               src="/logo.png"
-              alt=""
+              alt="AXICON Ltd"
               className="h-20 w-auto"
-              width="120"
-              height="60"
+              width={120}
+              height={60}
+              priority
             />
           </Link>
 
