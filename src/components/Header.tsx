@@ -48,13 +48,12 @@ export default function Header() {
             className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 rounded-md"
             aria-label="AXICON Ltd - Home"
           >
-            <Image
-              src="/logo.png"
+            <img
+              src="/axicon/logo.png"
               alt="AXICON Ltd"
               className="h-20 w-auto"
-              width={120}
-              height={60}
-              priority
+              width="120"
+              height="60"
             />
           </Link>
 
