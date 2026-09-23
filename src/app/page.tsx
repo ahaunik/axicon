@@ -46,10 +46,10 @@ export default function HomePage() {
       >
         {/* Photo slideshow background */}
         <div className="absolute inset-0" aria-hidden="true">
-          <div className="hero-slideshow__layer" style={{ backgroundImage: "url('/images/hero/refinery.jpg')", ["--i" as string]: 0 }} />
-          <div className="hero-slideshow__layer" style={{ backgroundImage: "url('/images/hero/engineer.jpg')", ["--i" as string]: 1 }} />
-          <div className="hero-slideshow__layer" style={{ backgroundImage: "url('/images/hero/industry.jpg')", ["--i" as string]: 2 }} />
-          <div className="hero-slideshow__layer" style={{ backgroundImage: "url('/images/hero/construction.jpg')", ["--i" as string]: 3 }} />
+          <div className="hero-slideshow__layer" style={{ backgroundImage: "url('/axicon/images/hero/refinery.jpg')", ["--i" as string]: 0 }} />
+          <div className="hero-slideshow__layer" style={{ backgroundImage: "url('/axicon/images/hero/engineer.jpg')", ["--i" as string]: 1 }} />
+          <div className="hero-slideshow__layer" style={{ backgroundImage: "url('/axicon/images/hero/industry.jpg')", ["--i" as string]: 2 }} />
+          <div className="hero-slideshow__layer" style={{ backgroundImage: "url('/axicon/images/hero/construction.jpg')", ["--i" as string]: 3 }} />
         </div>
         {/* Readability overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/95 via-brand-primary/65 to-brand-primary/25" aria-hidden="true" />
