@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fefefe;
+  --foreground: #1e293b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* AXICON Brand Palette - Based on logo blue (#084376) */
+  --color-brand-primary: #084376;
+  --color-brand-primary-light: #0c5c9e;
+  --color-brand-primary-lighter: #1078c6;
+  --color-brand-primary-lightest: #dbeafe;
+  --color-brand-dark: #0a2c4b;
+  --color-brand-dark-900: #071f36;
+  --color-brand-secondary: #334155;
+  --color-brand-accent: #1d6fb8;
+  --color-brand-accent-light: #2f86c9;
+  --color-brand-accent-muted: #8fb6dc;
+  --color-brand-surface: #ffffff;
+  --color-brand-surface-hover: #f8fafc;
+  --color-brand-border: #e2e8f0;
+  --color-brand-complement: #1d6fb8;
+  --color-brand-complement-light: #2f86c9;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+
+  /* Hero photo slideshow — crossfades between N background layers (CSS-only) */
+  .hero-slideshow__layer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroFade 16s linear infinite;
+    animation-delay: calc(var(--i) * 4s);
+  }
+
+  @keyframes heroFade {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    6% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 1;
+    }
+    31% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.12);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
