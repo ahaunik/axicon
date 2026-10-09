@@ -56,7 +56,7 @@ Lead Summary for AXICON Pte. Ltd.
 Location: ${location}
 Scope:    ${scope}
 Standards: ${standards}
-Timeline:  ${timestamp}
+Timeline:  ${timeline}
 File Uploaded: ${fileName || 'None'}
 Timestamp: ${new Date().toISOString()}
 `;
