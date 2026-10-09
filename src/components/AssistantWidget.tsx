@@ -126,26 +126,36 @@ export default function AssistantWidget() {
         formData.append("uploadedFiles", file.name);
       });
 
-      const response = await fetch("/api/submit-lead", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "73050742-b448-4083-817d-34b72446ee6b",
+          subject: "New Axicon Assistant Lead",
+          location: leadData.location,
+          scope: leadData.scope,
+          standards: leadData.standards,
+          timeline: leadData.timeline,
+        }),
       });
 
-      const result = await response.json();
+      const data = await response.json();
 
-      if (response.ok) {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "system",
-            content: `Lead submitted successfully (ID: ${result.leadId}). A Technical Manager will review your file. A high-priority ticket has been tagged for the Inspection Coordinator.`,
-            timestamp: new Date(),
-          },
-        ]);
-        setStep(5);
-      } else {
-        throw new Error(result.error || "Submission failed");
+      if (!response.ok || data.error) {
+        throw new Error(data.message || "Submission failed");
       }
+
+      const leadId = data?.message ? undefined : undefined;
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "system",
+          content: `Lead submitted successfully. A Technical Manager will review your file and follow up.`,
+          timestamp: new Date(),
+        },
+      ]);
+      setStep(5);
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : "An unknown error occurred";
