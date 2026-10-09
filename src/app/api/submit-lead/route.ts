@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 // POST handler for receiving qualified lead data
 export async function POST(request: NextRequest) {
   try {
